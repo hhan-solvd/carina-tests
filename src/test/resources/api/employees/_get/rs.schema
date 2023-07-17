@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {"type": "string"},
+        "data": {
+            "type": "object",
+            "properties": {
+                "employee_name": {"type": "string"},
+                "employee_salary": {"type": "number"},
+                "employee_age": {"type": "number"},
+                "id": {"type": "number"}
+            },
+            "required": ["employee_name", "employee_salary", "employee_age", "id"]
+        },
+        "message": {"type": "string"}
+    },
+    "required": ["status", "data", "message"]
+}
