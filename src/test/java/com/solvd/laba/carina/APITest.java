@@ -30,12 +30,7 @@ public class APITest implements IAbstractTest {
         assertEquals("Successfully! Record has been added.", responseJSON.getString("message"),
                 "Message does not match");
 
-        JSONObject responseData = responseJSON.getJSONObject("data");
-        assertEquals("Alex Smith", responseData.getString("employee_name"),
-                "Employee name does not match");
-        assertEquals(100000, responseData.getInt("employee_salary"),
-                "Employee salary does not match");
-        assertEquals(28, responseData.getInt("employee_age"), "Employee age does not match");
+        apiMethod.validateResponseAgainstSchema("api/employees/_post/rs.schema");
     }
 
     @Test()
@@ -47,7 +42,7 @@ public class APITest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "hhan")
     public void testGetEmployeeById() {
-        executeApiMethod(new GetEmployeeByIdMethod(), "GET by ID test");
+        executeApiMethod(new GetEmployeeByIdMethod("1"), "GET by ID test");
     }
 
     @Test()

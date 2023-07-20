@@ -6,8 +6,8 @@
             "type": "object",
             "properties": {
                 "employee_name": {"type": "string"},
-                "employee_salary": {"type": "number"},
-                "employee_age": {"type": "number"},
+                "employee_salary": {"type": "string"},
+                "employee_age": {"type": "string"},
                 "id": {"type": "number"}
             },
             "required": ["employee_name", "employee_salary", "employee_age", "id"]
