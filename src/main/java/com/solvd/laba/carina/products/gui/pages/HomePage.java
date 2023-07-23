@@ -49,7 +49,6 @@ public class HomePage extends AbstractPage {
 
     public ProductsPage clickProductsButton() {
         productsButton.click();
-
         return new ProductsPage(driver);
     }
 
