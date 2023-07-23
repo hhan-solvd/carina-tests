@@ -13,7 +13,7 @@ import java.lang.invoke.MethodHandles;
 public class SearchedProductsPage extends AbstractPage {
 
     @FindBy(xpath = "//h2[contains(.,'Searched Products')]")
-    private ExtendedWebElement searchedProductsTitle;
+    private ExtendedWebElement screenTitle;
 
     public SearchedProductsPage(WebDriver driver) {
         super(driver);
