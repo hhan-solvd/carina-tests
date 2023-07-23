@@ -61,7 +61,6 @@ public class SignupLoginPage extends AbstractPage {
 
     public LoginPage clickLoginButton() {
         loginButton.click();
-
         return new LoginPage(driver);
     }
 
