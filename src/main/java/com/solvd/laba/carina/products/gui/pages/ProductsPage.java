@@ -48,7 +48,6 @@ public class ProductsPage extends AbstractPage {
 
     public SearchedProductsPage clickSubmitSearchButton() {
         submitSearchButton.click();
-
         return new SearchedProductsPage(driver);
     }
 
