@@ -55,7 +55,6 @@ public class SignupLoginPage extends AbstractPage {
 
     public SignupPage clickSignupButton() {
         signupButton.click();
-
         return new SignupPage(driver);
     }
 
