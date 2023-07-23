@@ -54,7 +54,6 @@ public class HomePage extends AbstractPage {
 
     public CartPage clickCartButton() {
         cartButton.click();
-
         return new CartPage(driver);
     }
 
