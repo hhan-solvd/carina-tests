@@ -97,7 +97,6 @@ public class SignupPage extends AbstractPage {
 
     public AccountCreatedPage clickCreateAccountButton() {
         createAccountButton.click();
-
         return new AccountCreatedPage(driver);
     }
 
