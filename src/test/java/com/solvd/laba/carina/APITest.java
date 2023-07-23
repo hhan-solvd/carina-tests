@@ -35,14 +35,14 @@ public class APITest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "hhan")
-    public void testGetEmployee() {
-        executeApiMethod(new GetEmployeeMethod(), "GET test");
+    public void testGetAllEmployee() {
+        executeApiMethod(new GetAllEmployeesMethod(), "GET test");
     }
 
     @Test()
     @MethodOwner(owner = "hhan")
-    public void testGetEmployeeById() {
-        executeApiMethod(new GetEmployeeByIdMethod("1"), "GET by ID test");
+    public void testGetEmployee() {
+        executeApiMethod(new GetEmployeeMethod("1"), "GET by ID test");
     }
 
     @Test()
