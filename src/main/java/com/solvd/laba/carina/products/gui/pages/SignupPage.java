@@ -5,10 +5,6 @@ import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.lang.invoke.MethodHandles;
 
 public class SignupPage extends AbstractPage {
 
@@ -89,10 +85,6 @@ public class SignupPage extends AbstractPage {
 
     public void typeMobileNumber(String mobileNumber) {
         mobileNumberField.type(mobileNumber);
-    }
-
-    public boolean isCreateAccountButtonDisplayed() {
-        return createAccountButton.isElementPresent();
     }
 
     public AccountCreatedPage clickCreateAccountButton() {

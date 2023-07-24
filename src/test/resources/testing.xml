@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AutomationExerciseTests" parallel="classes" thread-count="6">
+    <test name="AddProductToCartTest">
+        <classes>
+            <class name="com.solvd.laba.carina.AddProductToCartTest"/>
+        </classes>
+    </test>
+    <test name="LoginTest">
+        <classes>
+            <class name="com.solvd.laba.carina.LoginTest"/>
+        </classes>
+    </test>
+    <test name="ProductsTest">
+        <classes>
+            <class name="com.solvd.laba.carina.ProductsTest"/>
+        </classes>
+    </test>
+    <test name="SearchProductTest">
+        <classes>
+            <class name="com.solvd.laba.carina.SearchProductTest"/>
+        </classes>
+    </test>
+    <test name="SignupTest">
+        <classes>
+            <class name="com.solvd.laba.carina.SignupTest"/>
+        </classes>
+    </test>
+    <test name="SubscriptionTest">
+        <classes>
+            <class name="com.solvd.laba.carina.SubscriptionTest"/>
+        </classes>
+    </test>
+</suite>
+
