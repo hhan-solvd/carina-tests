@@ -1,23 +1,30 @@
 package com.solvd.laba.carina;
 
+import com.solvd.laba.carina.products.gui.pages.HomePage;
 import com.solvd.laba.carina.products.gui.pages.ProductsPage;
 import com.solvd.laba.carina.products.gui.pages.SearchedProductsPage;
+import com.solvd.laba.carina.products.gui.pages.components.NavigationBar;
+import com.solvd.laba.carina.products.utils.NavigationUtils;
+import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SearchProductTest extends AbstractBaseTest {
+public class SearchProductTest implements IAbstractTest {
 
     @Test
     @MethodOwner(owner = "hhan")
     public void searchProductTest() {
         String productName = R.TESTDATA.get("productName");
 
+        HomePage homePage = NavigationUtils.openHomePage(getDriver());
+        NavigationBar navigationBar = NavigationUtils.getNavigationBar(homePage);
         ProductsPage productsPage = navigationBar.clickProductsButton();
-        productsPage.assertPageOpened();
+        Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened");
         productsPage.typeProductName(productName);
         SearchedProductsPage searchedProductsPage = productsPage.clickSubmitSearchButton();
-        searchedProductsPage.assertPageOpened();
+        Assert.assertTrue(searchedProductsPage.isPageOpened(), "Searched products page is not opened");
     }
 
 }

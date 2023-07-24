@@ -34,9 +34,9 @@ public class NavigationBar extends AbstractUIObject {
         return new ProductsPage(driver);
     }
 
-    public CartPage clickCartButton(String productId) {
+    public CartPage clickCartButton() {
         cartButton.click();
-        return new CartPage(driver, productId);
+        return new CartPage(driver);
     }
 
 }

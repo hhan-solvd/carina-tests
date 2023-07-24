@@ -1,21 +1,25 @@
 package com.solvd.laba.carina;
 
 import com.solvd.laba.carina.products.gui.pages.AccountCreatedPage;
+import com.solvd.laba.carina.products.gui.pages.HomePage;
 import com.solvd.laba.carina.products.gui.pages.SignupLoginPage;
 import com.solvd.laba.carina.products.gui.pages.SignupPage;
-import com.solvd.laba.carina.products.utils.TestUtil;
+import com.solvd.laba.carina.products.gui.pages.components.NavigationBar;
+import com.solvd.laba.carina.products.utils.NavigationUtils;
+import com.solvd.laba.carina.products.utils.RandomGeneratorUtils;
+import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignupTest extends AbstractBaseTest {
+public class SignupTest implements IAbstractTest {
 
     @Test
     @MethodOwner(owner = "hhan")
     public void signupTest() {
         String name = R.TESTDATA.get("name");
-        String email = TestUtil.generateEmail();
+        String email = RandomGeneratorUtils.generateEmail();
         String password = R.TESTDATA.get("password");
         String firstName = R.TESTDATA.get("firstName");
         String lastName = R.TESTDATA.get("lastName");
@@ -25,8 +29,10 @@ public class SignupTest extends AbstractBaseTest {
         String zipcode = R.TESTDATA.get("zipcode");
         String mobileNumber = R.TESTDATA.get("mobileNumber");
 
+        HomePage homePage = NavigationUtils.openHomePage(getDriver());
+        NavigationBar navigationBar = NavigationUtils.getNavigationBar(homePage);
         SignupLoginPage signupLoginPage = navigationBar.clickSignupLoginButton();
-        signupLoginPage.assertPageOpened();
+        Assert.assertTrue(signupLoginPage.isPageOpened(), "Signup/Login page is not opened");
         signupLoginPage.typeName(name);
         signupLoginPage.typeSignupEmail(email);
 

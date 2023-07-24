@@ -1,11 +1,9 @@
 package com.solvd.laba.carina.products.utils;
 
-import com.zebrunner.carina.core.IAbstractTest;
-
 import java.util.Random;
 import java.util.UUID;
 
-public class TestUtil implements IAbstractTest {
+public class RandomGeneratorUtils {
 
     public static String generateEmail() {
         return "test-" + UUID.randomUUID() + "@hotmail.com";
