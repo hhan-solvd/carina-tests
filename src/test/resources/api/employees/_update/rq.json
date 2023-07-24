@@ -1,0 +1,5 @@
+{
+  <#if employee_name??>"employee_name": "${employee_name}",</#if>
+  <#if employee_salary??>"employee_salary": "${employee_salary}",</#if>
+  <#if employee_age??>"employee_age": "${employee_age}"</#if>
+}
