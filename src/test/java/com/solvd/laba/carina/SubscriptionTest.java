@@ -1,6 +1,7 @@
 package com.solvd.laba.carina;
 
 import com.solvd.laba.carina.products.gui.pages.HomePage;
+import com.solvd.laba.carina.products.gui.pages.components.SubscriptionComponent;
 import com.solvd.laba.carina.products.utils.NavigationUtils;
 import com.solvd.laba.carina.products.utils.RandomGeneratorUtils;
 import com.zebrunner.carina.core.IAbstractTest;
@@ -16,9 +17,10 @@ public class SubscriptionTest implements IAbstractTest {
         String email = RandomGeneratorUtils.generateEmail();
 
         HomePage homePage = NavigationUtils.openHomePage(getDriver());
-        homePage.typeSubscribeEmail(email);
-        homePage.clickSubscribeButton();
-        Assert.assertTrue(homePage.isSuccessSubscribeMessageDisplayed(),
+        SubscriptionComponent subscriptionComponent = homePage.getSubscriptionComponent();
+        subscriptionComponent.typeSubscribeEmail(email);
+        subscriptionComponent.clickSubscribeButton();
+        Assert.assertTrue(subscriptionComponent.isSuccessSubscribeMessageDisplayed(),
                 "Success message is not displayed after clicking on the subscribe button");
     }
 

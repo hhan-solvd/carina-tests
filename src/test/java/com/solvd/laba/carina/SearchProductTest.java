@@ -19,12 +19,16 @@ public class SearchProductTest implements IAbstractTest {
         String productName = R.TESTDATA.get("productName");
 
         HomePage homePage = NavigationUtils.openHomePage(getDriver());
-        NavigationBar navigationBar = NavigationUtils.getNavigationBar(homePage);
+        NavigationBar navigationBar = homePage.getNavigationBar();
         ProductsPage productsPage = navigationBar.clickProductsButton();
         Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened");
         productsPage.typeProductName(productName);
         SearchedProductsPage searchedProductsPage = productsPage.clickSubmitSearchButton();
         Assert.assertTrue(searchedProductsPage.isPageOpened(), "Searched products page is not opened");
+        Assert.assertTrue(searchedProductsPage.isCategoryTitleDisplayed(),
+                "Category title is not displayed on searched products page");
+        Assert.assertTrue(searchedProductsPage.isBrandsTitleDisplayed(),
+                "Brands title is not displayed on searched products page");
     }
 
 }

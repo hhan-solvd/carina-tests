@@ -14,7 +14,7 @@ public class ProductDetailPage extends AbstractPage {
     @FindBy(xpath = "//div[@class='product-details']//p[starts-with(text(), 'Category:')]")
     private ExtendedWebElement productCategory;
 
-    @FindBy(xpath = "//div[@class='product-details']//span/span")
+    @FindBy(xpath = "//div[@class='product-details']//span[contains(text(), 'Rs. ')]")
     private ExtendedWebElement productPrice;
 
     @FindBy(xpath = "//div[@class='product-details']//button[@class='btn btn-default cart']")

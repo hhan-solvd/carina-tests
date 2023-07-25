@@ -30,7 +30,7 @@ public class SignupTest implements IAbstractTest {
         String mobileNumber = R.TESTDATA.get("mobileNumber");
 
         HomePage homePage = NavigationUtils.openHomePage(getDriver());
-        NavigationBar navigationBar = NavigationUtils.getNavigationBar(homePage);
+        NavigationBar navigationBar = homePage.getNavigationBar();
         SignupLoginPage signupLoginPage = navigationBar.clickSignupLoginButton();
         Assert.assertTrue(signupLoginPage.isPageOpened(), "Signup/Login page is not opened");
         signupLoginPage.typeName(name);

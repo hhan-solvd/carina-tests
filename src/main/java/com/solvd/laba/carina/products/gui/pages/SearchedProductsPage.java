@@ -11,10 +11,24 @@ public class SearchedProductsPage extends AbstractPage {
     @FindBy(xpath = "//h2[contains(.,'Searched Products')]")
     private ExtendedWebElement screenTitle;
 
+    @FindBy(xpath = "//h2[contains(.,'Category')]")
+    private ExtendedWebElement categoryTitle;
+
+    @FindBy(xpath = "//h2[contains(.,'Brands')]")
+    private ExtendedWebElement brandsTitle;
+
     public SearchedProductsPage(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(screenTitle);
+    }
+
+    public boolean isCategoryTitleDisplayed() {
+        return categoryTitle.isElementPresent();
+    }
+
+    public boolean isBrandsTitleDisplayed() {
+        return brandsTitle.isElementPresent();
     }
 
 }

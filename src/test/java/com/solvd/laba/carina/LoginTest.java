@@ -20,7 +20,7 @@ public class LoginTest implements IAbstractTest {
         String password = R.TESTDATA.get("password");
 
         HomePage homePage = NavigationUtils.openHomePage(getDriver());
-        NavigationBar navigationBar = NavigationUtils.getNavigationBar(homePage);
+        NavigationBar navigationBar = homePage.getNavigationBar();
         SignupLoginPage signupLoginPage = navigationBar.clickSignupLoginButton();
         Assert.assertTrue(signupLoginPage.isPageOpened(), "Signup/Login page is not opened");
         signupLoginPage.typeLoginEmail(email);

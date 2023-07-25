@@ -14,10 +14,10 @@ public class ProductsTest implements IAbstractTest {
     @Test
     @MethodOwner(owner = "hhan")
     public void productsTest() {
-        String productId = RandomGeneratorUtils.generateNumber();
+        String productId = RandomGeneratorUtils.generateNumber(8);
 
         HomePage homePage = NavigationUtils.openHomePage(getDriver());
-        NavigationBar navigationBar = NavigationUtils.getNavigationBar(homePage);
+        NavigationBar navigationBar = homePage.getNavigationBar();
         ProductsPage productsPage = navigationBar.clickProductsButton();
         Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened");
         ProductDetailPage productDetailPage = productsPage.clickViewProductButtonByProductId(productId);

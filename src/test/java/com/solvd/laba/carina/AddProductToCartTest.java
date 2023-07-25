@@ -16,16 +16,16 @@ public class AddProductToCartTest implements IAbstractTest {
     @Test
     @MethodOwner(owner = "hhan")
     public void addProductToCartTest() {
-        String productId = RandomGeneratorUtils.generateNumber();
+        String productId = RandomGeneratorUtils.generateNumber(8);
 
         HomePage homePage = NavigationUtils.openHomePage(getDriver());
-        NavigationBar navigationBar = NavigationUtils.getNavigationBar(homePage);
+        NavigationBar navigationBar = homePage.getNavigationBar();
         ProductsPage productsPage = navigationBar.clickProductsButton();
         Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened");
         productsPage.clickAddToCartButtonByProductId(productId);
         productsPage.clickContinueShoppingButton();
         CartPage cartPage = navigationBar.clickCartButton();
-        Assert.assertTrue(cartPage.isProductDisplayed(productId),
+        Assert.assertTrue(cartPage.isProductTitlePresent(productId),
                 "Product is not added to cart after clicking on add to cart button");
     }
 
