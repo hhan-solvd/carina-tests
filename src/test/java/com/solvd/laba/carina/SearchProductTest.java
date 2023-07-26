@@ -29,6 +29,8 @@ public class SearchProductTest implements IAbstractTest {
                 "Category title is not displayed on searched products page");
         Assert.assertTrue(searchedProductsPage.isBrandsTitleDisplayed(),
                 "Brands title is not displayed on searched products page");
+        Assert.assertTrue(searchedProductsPage.isProductPresent(productName),
+                "Product is not displayed on searched products page");
     }
 
 }

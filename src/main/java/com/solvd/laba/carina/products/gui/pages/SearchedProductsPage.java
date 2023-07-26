@@ -17,6 +17,9 @@ public class SearchedProductsPage extends AbstractPage {
     @FindBy(xpath = "//h2[contains(.,'Brands')]")
     private ExtendedWebElement brandsTitle;
 
+    @FindBy(xpath = "//div[@class='productinfo text-center']/p[text()='%s']")
+    private ExtendedWebElement productName;
+
     public SearchedProductsPage(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
@@ -29,6 +32,10 @@ public class SearchedProductsPage extends AbstractPage {
 
     public boolean isBrandsTitleDisplayed() {
         return brandsTitle.isElementPresent();
+    }
+
+    public boolean isProductPresent(String name) {
+        return productName.format(name).isElementPresent();
     }
 
 }
