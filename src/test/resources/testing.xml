@@ -1,0 +1,57 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AutomationExerciseTests" parallel="classes" thread-count="6">
+    <test name="AddProductToCartTest">
+        <classes>
+            <class name="com.solvd.laba.carina.AddProductToCartTest">
+                <methods>
+                    <include name="addProductToCartTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LoginTest">
+        <classes>
+            <class name="com.solvd.laba.carina.LoginTest">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ProductsTest">
+        <classes>
+            <class name="com.solvd.laba.carina.ProductsTest">
+                <methods>
+                    <include name="productsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchProductTest">
+        <classes>
+            <class name="com.solvd.laba.carina.SearchProductTest">
+                <methods>
+                    <include name="searchProductTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SignupTest">
+        <classes>
+            <class name="com.solvd.laba.carina.SignupTest">
+                <methods>
+                    <include name="signupTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SubscriptionTest">
+        <classes>
+            <class name="com.solvd.laba.carina.SubscriptionTest">
+                <methods>
+                    <include name="subscriptionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
