@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = Type.IOS_PHONE, parentClass = AboutScreenBase.class)
 public class AboutScreen extends AboutScreenBase implements IMobileUtils {
+
     public AboutScreen(WebDriver driver) {
         super(driver);
     }
