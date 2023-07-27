@@ -1,4 +1,4 @@
-package com.solvd.laba.carina;
+package com.solvd.laba.carina.webtests;
 
 import com.solvd.laba.carina.products.gui.pages.HomePage;
 import com.solvd.laba.carina.products.gui.pages.LoginPage;

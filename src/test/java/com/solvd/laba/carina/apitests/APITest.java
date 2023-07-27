@@ -1,4 +1,4 @@
-package com.solvd.laba.carina;
+package com.solvd.laba.carina.apitests;
 
 import com.solvd.laba.carina.employees.api.*;
 import com.zebrunner.carina.api.AbstractApiMethodV2;
