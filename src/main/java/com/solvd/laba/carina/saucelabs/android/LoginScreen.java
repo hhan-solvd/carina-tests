@@ -4,13 +4,12 @@ import com.solvd.laba.carina.saucelabs.common.LoginScreenBase;
 import com.solvd.laba.carina.saucelabs.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = Type.ANDROID_PHONE, parentClass = LoginScreenBase.class)
-public class LoginScreen extends LoginScreenBase implements IMobileUtils {
+public class LoginScreen extends LoginScreenBase {
 
     @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Username\"]")
     private ExtendedWebElement usernameField;

@@ -4,13 +4,12 @@ import com.solvd.laba.carina.saucelabs.common.CartScreenBase;
 import com.solvd.laba.carina.saucelabs.common.ProductDetailsScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = Type.ANDROID_PHONE, parentClass = ProductDetailsScreenBase.class)
-public class ProductDetailsScreen extends ProductDetailsScreenBase implements IMobileUtils {
+public class ProductDetailsScreen extends ProductDetailsScreenBase {
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]")
     private ExtendedWebElement addToCartButton;

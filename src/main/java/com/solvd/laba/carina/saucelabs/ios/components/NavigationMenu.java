@@ -6,23 +6,23 @@ import com.solvd.laba.carina.saucelabs.common.components.NavigationMenuBase;
 import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = Type.IOS_PHONE, parentClass = NavigationMenuBase.class)
-public class NavigationMenu extends NavigationMenuBase implements IMobileUtils {
+public class NavigationMenu extends NavigationMenuBase {
+
     public NavigationMenu(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public LoginScreenBase clickLogoutButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
     @Override
     public AboutScreenBase clickAboutButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
 }

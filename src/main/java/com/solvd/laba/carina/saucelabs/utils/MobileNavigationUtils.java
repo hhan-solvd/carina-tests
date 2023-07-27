@@ -2,22 +2,19 @@ package com.solvd.laba.carina.saucelabs.utils;
 
 import com.solvd.laba.carina.saucelabs.android.CartScreen;
 import com.solvd.laba.carina.saucelabs.android.ProductDetailsScreen;
-import com.solvd.laba.carina.saucelabs.common.LoginScreenBase;
 import com.solvd.laba.carina.saucelabs.android.ProductsScreen;
-import com.zebrunner.carina.core.IAbstractTest;
-import com.zebrunner.carina.utils.R;
+import com.solvd.laba.carina.saucelabs.android.components.NavigationMenu;
 
-public class MobileNavigationUtils implements IAbstractTest {
+public class MobileNavigationUtils {
+
+    private LoginUtils loginUtils;
+
+    public MobileNavigationUtils() {
+        this.loginUtils = new LoginUtils();
+    }
 
     public ProductsScreen openProductScreen() {
-        String username = R.TESTDATA.get("username");
-        String password = R.TESTDATA.get("mobilePassword");
-
-        LoginScreenBase loginScreen = initPage(LoginScreenBase.class);
-        loginScreen.typeUsername(username);
-        loginScreen.typePassword(password);
-
-        return (ProductsScreen) loginScreen.clickLoginButton();
+        return loginUtils.loginUser();
     }
 
     public ProductDetailsScreen openProductDetailsScreen(String productTitle) {
@@ -30,5 +27,8 @@ public class MobileNavigationUtils implements IAbstractTest {
         return (CartScreen) productDetailsScreen.clickCartButton();
     }
 
-}
+    public NavigationMenu openNavigationMenu() {
+        return (NavigationMenu) openProductScreen().clickNavigationButton();
+    }
 
+}

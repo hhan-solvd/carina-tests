@@ -16,17 +16,17 @@ public class CartScreen extends CartScreenBase {
 
     @Override
     public boolean isProductPresent(String productTitle) {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
     @Override
     public CheckoutInformationScreenBase clickCheckoutButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
     @Override
     public void clickRemoveButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
 }

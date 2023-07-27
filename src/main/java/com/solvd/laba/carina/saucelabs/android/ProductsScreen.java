@@ -5,13 +5,12 @@ import com.solvd.laba.carina.saucelabs.common.ProductsScreenBase;
 import com.solvd.laba.carina.saucelabs.common.components.NavigationMenuBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = Type.ANDROID_PHONE, parentClass = ProductsScreenBase.class)
-public class ProductsScreen extends ProductsScreenBase implements IMobileUtils {
+public class ProductsScreen extends ProductsScreenBase {
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc='test-Cart drop zone']//android.widget.TextView[@text=\"PRODUCTS\"]")
     private ExtendedWebElement screenTitle;

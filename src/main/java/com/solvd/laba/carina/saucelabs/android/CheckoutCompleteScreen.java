@@ -3,13 +3,12 @@ package com.solvd.laba.carina.saucelabs.android;
 import com.solvd.laba.carina.saucelabs.common.CheckoutCompleteScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = Type.ANDROID_PHONE, parentClass = CheckoutCompleteScreenBase.class)
-public class CheckoutCompleteScreen extends CheckoutCompleteScreenBase implements IMobileUtils {
+public class CheckoutCompleteScreen extends CheckoutCompleteScreenBase {
 
     @FindBy(xpath = "//android.widget.TextView[@text=\"CHECKOUT: COMPLETE!\"]")
     private ExtendedWebElement screenTitle;
@@ -30,4 +29,5 @@ public class CheckoutCompleteScreen extends CheckoutCompleteScreenBase implement
     public boolean isSuccessMessageDisplayed() {
         return successMessage.isElementPresent();
     }
+
 }

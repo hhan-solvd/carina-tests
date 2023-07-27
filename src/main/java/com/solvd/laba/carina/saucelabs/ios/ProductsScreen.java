@@ -17,12 +17,12 @@ public class ProductsScreen extends ProductsScreenBase {
 
     @Override
     public ProductDetailsScreenBase clickProductTitle(String productTitle) {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
     @Override
     public NavigationMenuBase clickNavigationButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
 }

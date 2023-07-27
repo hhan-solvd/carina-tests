@@ -15,17 +15,17 @@ public class LoginScreen extends LoginScreenBase {
 
     @Override
     public void typeUsername(String username) {
-        throw new UnsupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new UnsupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
     @Override
     public void typePassword(String password) {
-        throw new UnsupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new UnsupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
     @Override
     public ProductsScreenBase clickLoginButton() {
-        throw new UnsupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS);
+        throw new UnsupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
     }
 
 }

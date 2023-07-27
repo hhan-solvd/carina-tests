@@ -4,13 +4,12 @@ import com.solvd.laba.carina.saucelabs.common.CheckoutInformationScreenBase;
 import com.solvd.laba.carina.saucelabs.common.CheckoutOverviewScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = Type.ANDROID_PHONE, parentClass = CheckoutInformationScreenBase.class)
-public class CheckoutInformationScreen extends CheckoutInformationScreenBase implements IMobileUtils {
+public class CheckoutInformationScreen extends CheckoutInformationScreenBase {
 
     @FindBy(xpath = "//android.widget.TextView[@text=\"CHECKOUT: INFORMATION\"]")
     private ExtendedWebElement screenTitle;

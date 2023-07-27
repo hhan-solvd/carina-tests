@@ -3,13 +3,12 @@ package com.solvd.laba.carina.saucelabs.android;
 import com.solvd.laba.carina.saucelabs.common.AboutScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = Type.ANDROID_PHONE, parentClass = AboutScreenBase.class)
-public class AboutScreen extends AboutScreenBase implements IMobileUtils {
+public class AboutScreen extends AboutScreenBase {
 
     @FindBy(xpath = "//android.widget.EditText[@text='saucelabs.com']")
     private ExtendedWebElement screenUrl;

@@ -28,7 +28,7 @@ public class SauceLabsTest extends AbstractSauceLabsTest {
     public void testAddToCart() {
         String productTitle = R.TESTDATA.get("productTitle");
 
-        ProductDetailsScreenBase productDetailsScreen = navigationUtils.openProductDetailsScreen(productTitle);
+        ProductDetailsScreenBase productDetailsScreen = mobileNavigationUtils.openProductDetailsScreen(productTitle);
         productDetailsScreen.clickAddToCartButton();
         CartScreenBase cartScreen = productDetailsScreen.clickCartButton();
         Assert.assertTrue(cartScreen.isOpened(), "Cart screen is not opened");
@@ -38,9 +38,7 @@ public class SauceLabsTest extends AbstractSauceLabsTest {
     @Test()
     @MethodOwner(owner = "hhan")
     public void testLogoutUser() {
-        ProductsScreenBase productsScreen = navigationUtils.openProductScreen();
-
-        NavigationMenuBase navigationMenu = productsScreen.clickNavigationButton();
+        NavigationMenuBase navigationMenu = mobileNavigationUtils.openNavigationMenu();
         LoginScreenBase loginScreen = navigationMenu.clickLogoutButton();
         Assert.assertTrue(loginScreen.isOpened(), "Login screen is not opened after clicking on logout button");
     }
@@ -53,7 +51,7 @@ public class SauceLabsTest extends AbstractSauceLabsTest {
         String lastName = R.TESTDATA.get("lastName");
         String zipcode = R.TESTDATA.get("zipcode");
 
-        CartScreenBase cartScreen = navigationUtils.openCartScreenWithProductAdded(productTitle);
+        CartScreenBase cartScreen = mobileNavigationUtils.openCartScreenWithProductAdded(productTitle);
         CheckoutInformationScreenBase checkoutInformationScreen = cartScreen.clickCheckoutButton();
         Assert.assertTrue(checkoutInformationScreen.isOpened(), "Checkout information screen is not opened");
         checkoutInformationScreen.typeFirstName(firstName);
@@ -71,7 +69,7 @@ public class SauceLabsTest extends AbstractSauceLabsTest {
     public void testRemoveFromCart() {
         String productTitle = R.TESTDATA.get("productTitle");
 
-        CartScreenBase cartScreen = navigationUtils.openCartScreenWithProductAdded(productTitle);
+        CartScreenBase cartScreen = mobileNavigationUtils.openCartScreenWithProductAdded(productTitle);
         cartScreen.clickRemoveButton();
         Assert.assertFalse(cartScreen.isProductPresent(productTitle), "Product is not removed from the cart");
     }
@@ -79,9 +77,7 @@ public class SauceLabsTest extends AbstractSauceLabsTest {
     @Test()
     @MethodOwner(owner = "hhan")
     public void testAboutNavigation() {
-        ProductsScreenBase productsScreen = navigationUtils.openProductScreen();
-
-        NavigationMenuBase navigationMenu = productsScreen.clickNavigationButton();
+        NavigationMenuBase navigationMenu = mobileNavigationUtils.openNavigationMenu();
         AboutScreenBase aboutScreen = navigationMenu.clickAboutButton();
         Assert.assertTrue(aboutScreen.isOpened(), "About screen is not opened");
         Assert.assertTrue(aboutScreen.isScreenUrlDisplayed(), "About screen url is not displayed");
