@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class AbstractSauceLabsScreenBase extends AbstractPage {
 
-    public static final String METHOD_IS_NOT_IMPLEMENTED_FOR_I_OS = "Method is not implemented for iOS";
+    public static final String METHOD_IS_NOT_IMPLEMENTED_FOR_IOS = "Method is not implemented for iOS";
 
     public AbstractSauceLabsScreenBase(WebDriver driver) {
         super(driver);
