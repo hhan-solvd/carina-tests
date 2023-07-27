@@ -7,7 +7,7 @@ import com.solvd.laba.carina.saucelabs.android.ProductsScreen;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.utils.R;
 
-public class NavigationUtils implements IAbstractTest {
+public class MobileNavigationUtils implements IAbstractTest {
 
     public ProductsScreen openProductScreen() {
         String username = R.TESTDATA.get("username");
