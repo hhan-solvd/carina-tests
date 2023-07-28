@@ -32,7 +32,9 @@ public class ProductsScreen extends ProductsScreenBase {
 
     @Override
     public ProductDetailsScreenBase clickProductTitle(String productTitle) {
-        productTitleS.format(productTitle).click();
+        productTitleS = productTitleS.format(productTitle);
+        swipe(productTitleS, 5);
+        productTitleS.click();
         return initPage(ProductDetailsScreenBase.class);
     }
 

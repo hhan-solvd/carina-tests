@@ -59,6 +59,7 @@ public class SauceLabsTest extends AbstractSauceLabsTest {
         checkoutInformationScreen.typeZipcode(zipcode);
 
         CheckoutOverviewScreenBase checkoutOverviewScreen = checkoutInformationScreen.clickContinueButton();
+        Assert.assertTrue(checkoutOverviewScreen.isOpened(), "Checkout overview screen is not opened");
         CheckoutCompleteScreenBase checkoutCompleteScreen = checkoutOverviewScreen.clickFinishButton();
         Assert.assertTrue(checkoutCompleteScreen.isOpened(), "Checkout complete screen is not opened");
         Assert.assertTrue(checkoutCompleteScreen.isSuccessMessageDisplayed(), "Checkout success message is not displayed");

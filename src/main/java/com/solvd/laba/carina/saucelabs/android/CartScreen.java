@@ -11,6 +11,9 @@ import org.openqa.selenium.support.FindBy;
 @DeviceType(pageType = Type.ANDROID_PHONE, parentClass = CartScreenBase.class)
 public class CartScreen extends CartScreenBase {
 
+    @FindBy(xpath = "//android.widget.TextView[@text=\"YOUR CART\"]")
+    private ExtendedWebElement screenTitle;
+
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Description\"]/android.widget.TextView[@text='%s']")
     private ExtendedWebElement productTitleS;
 
@@ -26,16 +29,17 @@ public class CartScreen extends CartScreenBase {
 
     @Override
     public boolean isOpened() {
-        return checkoutButton.isElementPresent();
+        return screenTitle.isElementPresent();
     }
 
     @Override
     public boolean isProductPresent(String productTitle) {
-        return productTitleS.format(productTitle).isElementPresent();
+        return swipe(productTitleS.format(productTitle));
     }
 
     @Override
     public CheckoutInformationScreenBase clickCheckoutButton() {
+        swipe(checkoutButton, 1);
         checkoutButton.click();
         return initPage(CheckoutInformationScreenBase.class);
     }
