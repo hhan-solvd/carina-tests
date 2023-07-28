@@ -34,7 +34,7 @@ public class CartScreen extends CartScreenBase {
 
     @Override
     public boolean isProductPresent(String productTitle) {
-        return swipe(productTitleS.format(productTitle));
+        return swipe(productTitleS.format(productTitle), 5);
     }
 
     @Override

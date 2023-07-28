@@ -1,9 +1,9 @@
 package com.solvd.laba.carina.saucelabs.utils;
 
-import com.solvd.laba.carina.saucelabs.android.CartScreen;
-import com.solvd.laba.carina.saucelabs.android.ProductDetailsScreen;
-import com.solvd.laba.carina.saucelabs.android.ProductsScreen;
-import com.solvd.laba.carina.saucelabs.android.components.NavigationMenu;
+import com.solvd.laba.carina.saucelabs.common.CartScreenBase;
+import com.solvd.laba.carina.saucelabs.common.ProductDetailsScreenBase;
+import com.solvd.laba.carina.saucelabs.common.ProductsScreenBase;
+import com.solvd.laba.carina.saucelabs.common.components.NavigationMenuBase;
 
 public class MobileNavigationUtils {
 
@@ -13,22 +13,22 @@ public class MobileNavigationUtils {
         this.loginUtils = new LoginUtils();
     }
 
-    public ProductsScreen openProductScreen() {
+    public ProductsScreenBase openProductScreen() {
         return loginUtils.loginUser();
     }
 
-    public ProductDetailsScreen openProductDetailsScreen(String productTitle) {
-        return (ProductDetailsScreen) openProductScreen().clickProductTitle(productTitle);
+    public ProductDetailsScreenBase openProductDetailsScreen(String productTitle) {
+        return openProductScreen().clickProductTitle(productTitle);
     }
 
-    public CartScreen openCartScreenWithProductAdded(String productTitle) {
-        ProductDetailsScreen productDetailsScreen = openProductDetailsScreen(productTitle);
+    public CartScreenBase openCartScreenWithProductAdded(String productTitle) {
+        ProductDetailsScreenBase productDetailsScreen = openProductDetailsScreen(productTitle);
         productDetailsScreen.clickAddToCartButton();
-        return (CartScreen) productDetailsScreen.clickCartButton();
+        return productDetailsScreen.clickCartButton();
     }
 
-    public NavigationMenu openNavigationMenu() {
-        return (NavigationMenu) openProductScreen().clickNavigationButton();
+    public NavigationMenuBase openNavigationMenu() {
+        return openProductScreen().clickNavigationButton();
     }
 
 }
