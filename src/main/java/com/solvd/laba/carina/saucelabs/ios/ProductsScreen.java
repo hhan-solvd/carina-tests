@@ -3,26 +3,45 @@ package com.solvd.laba.carina.saucelabs.ios;
 import com.solvd.laba.carina.saucelabs.common.ProductDetailsScreenBase;
 import com.solvd.laba.carina.saucelabs.common.ProductsScreenBase;
 import com.solvd.laba.carina.saucelabs.common.components.NavigationMenuBase;
-import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
+import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = Type.IOS_PHONE, parentClass = ProductsScreenBase.class)
 public class ProductsScreen extends ProductsScreenBase {
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == \"PRODUCTS\"`]")
+    private ExtendedWebElement screenTitle;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == \"%s\"`]")
+    private ExtendedWebElement productTitleS;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Menu\"`]")
+    private ExtendedWebElement navigationButton;
 
     public ProductsScreen(WebDriver driver) {
         super(driver);
     }
 
     @Override
+    public boolean isOpened() {
+        return screenTitle.isElementPresent();
+    }
+
+    @Override
     public ProductDetailsScreenBase clickProductTitle(String productTitle) {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
+        productTitleS = productTitleS.format(productTitle);
+        swipe(productTitleS, 5);
+        productTitleS.click();
+        return initPage(ProductDetailsScreenBase.class);
     }
 
     @Override
     public NavigationMenuBase clickNavigationButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
+        navigationButton.click();
+        return initPage(NavigationMenuBase.class);
     }
 
 }

@@ -3,13 +3,20 @@ package com.solvd.laba.carina.saucelabs.ios.components;
 import com.solvd.laba.carina.saucelabs.common.AboutScreenBase;
 import com.solvd.laba.carina.saucelabs.common.LoginScreenBase;
 import com.solvd.laba.carina.saucelabs.common.components.NavigationMenuBase;
-import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
+import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = Type.IOS_PHONE, parentClass = NavigationMenuBase.class)
 public class NavigationMenu extends NavigationMenuBase {
+
+    @ExtendedFindBy(accessibilityId = "test-LOGOUT")
+    private ExtendedWebElement logoutButton;
+
+    @ExtendedFindBy(accessibilityId = "test-ABOUT")
+    private ExtendedWebElement aboutButton;
 
     public NavigationMenu(WebDriver driver) {
         super(driver);
@@ -17,12 +24,13 @@ public class NavigationMenu extends NavigationMenuBase {
 
     @Override
     public LoginScreenBase clickLogoutButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
+        logoutButton.click();
+        return initPage(LoginScreenBase.class);
     }
 
-    @Override
     public AboutScreenBase clickAboutButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
+        aboutButton.click();
+        return initPage(AboutScreenBase.class);
     }
 
 }
