@@ -4,3 +4,6 @@
 
 - Web Tests:
     - Web service: https://automationexercise.com
+
+- Mobile Tests:
+  - Mobile app: sauce labs

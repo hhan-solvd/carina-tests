@@ -1,4 +1,4 @@
-package com.solvd.laba.carina;
+package com.solvd.laba.carina.webtests;
 
 import com.solvd.laba.carina.products.gui.pages.AccountCreatedPage;
 import com.solvd.laba.carina.products.gui.pages.HomePage;
