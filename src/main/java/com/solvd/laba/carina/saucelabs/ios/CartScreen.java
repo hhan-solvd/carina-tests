@@ -17,7 +17,7 @@ public class CartScreen extends CartScreenBase {
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Description\"`]/XCUIElementTypeStaticText[`label == \"%s\"`]")
     private ExtendedWebElement productTitleS;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"CHECKOUT\"`][`name == \"CHECKOUT\"`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"CHECKOUT\" AND name == \"CHECKOUT\"`]")
     private ExtendedWebElement checkoutButton;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-REMOVE\"`]")
