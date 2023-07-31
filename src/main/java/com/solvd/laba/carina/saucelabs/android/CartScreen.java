@@ -20,7 +20,7 @@ public class CartScreen extends CartScreenBase {
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-CHECKOUT\"]")
     private ExtendedWebElement checkoutButton;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-REMOVE\"]")
+    @FindBy(xpath = "//android.widget.TextView[@text=\"%s\"]/../..//android.view.ViewGroup[@content-desc=\"test-REMOVE\"]")
     private ExtendedWebElement removeButton;
 
     public CartScreen(WebDriver driver) {
@@ -45,7 +45,9 @@ public class CartScreen extends CartScreenBase {
     }
 
     @Override
-    public void clickRemoveButton() {
+    public void clickRemoveButton(String productTitle) {
+        removeButton = removeButton.format(productTitle);
+        swipe(removeButton, 5);
         removeButton.click();
     }
 

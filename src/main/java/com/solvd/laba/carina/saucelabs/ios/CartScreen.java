@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 @DeviceType(pageType = Type.IOS_PHONE, parentClass = CartScreenBase.class)
 public class CartScreen extends CartScreenBase {
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == \"Sauce Labs Backpack\"`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == \"YOUR CART\"`]")
     private ExtendedWebElement screenTitle;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Description\"`]/XCUIElementTypeStaticText[`label == \"%s\"`]")
@@ -20,7 +20,7 @@ public class CartScreen extends CartScreenBase {
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"CHECKOUT\" AND name == \"CHECKOUT\"`]")
     private ExtendedWebElement checkoutButton;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-REMOVE\"`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"%s\"`]/XCUIElementTypeOther[`name == \"test-Price\"`]/XCUIElementTypeOther[`name == \"REMOVE\"`]")
     private ExtendedWebElement removeButton;
 
     public CartScreen(WebDriver driver) {
@@ -45,7 +45,9 @@ public class CartScreen extends CartScreenBase {
     }
 
     @Override
-    public void clickRemoveButton() {
+    public void clickRemoveButton(String productDetails) {
+        removeButton = removeButton.format(productDetails);
+        swipe(removeButton, 5);
         removeButton.click();
     }
 

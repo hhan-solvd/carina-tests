@@ -67,16 +67,6 @@ public class SauceLabsTest extends AbstractSauceLabsTest {
 
     @Test()
     @MethodOwner(owner = "hhan")
-    public void testRemoveFromCart() {
-        String productTitle = R.TESTDATA.get("productTitle");
-
-        CartScreenBase cartScreen = mobileNavigationUtils.openCartScreenWithProductAdded(productTitle);
-        cartScreen.clickRemoveButton();
-        Assert.assertFalse(cartScreen.isProductPresent(productTitle), "Product is not removed from the cart");
-    }
-
-    @Test()
-    @MethodOwner(owner = "hhan")
     public void testAboutNavigation() {
         NavigationMenuBase navigationMenu = mobileNavigationUtils.openNavigationMenu();
         AboutScreenBase aboutScreen = navigationMenu.clickAboutButton();

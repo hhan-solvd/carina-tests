@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="MobileTests" parallel="classes" thread-count="6">
+<suite name="AndroidMobileTests" parallel="classes" thread-count="6">
     <test name="SauceLabsTests">
         <classes>
             <class name="com.solvd.laba.carina.mobiletests.SauceLabsTest">
@@ -9,8 +9,12 @@
                     <include name="testAddToCart"/>
                     <include name="testLogoutUser"/>
                     <include name="testCheckoutUser"/>
-                    <include name="testRemoveFromCart"/>
                     <include name="testAboutNavigation"/>
+                </methods>
+            </class>
+            <class name="com.solvd.laba.carina.mobiletests.AndroidRemoveFromCartTest">
+                <methods>
+                    <include name="testRemoveFromCart"/>
                 </methods>
             </class>
         </classes>
