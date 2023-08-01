@@ -2,31 +2,53 @@ package com.solvd.laba.carina.saucelabs.ios;
 
 import com.solvd.laba.carina.saucelabs.common.CartScreenBase;
 import com.solvd.laba.carina.saucelabs.common.CheckoutInformationScreenBase;
-import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.utils.factory.DeviceType.Type;
+import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = Type.IOS_PHONE, parentClass = CartScreenBase.class)
 public class CartScreen extends CartScreenBase {
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == \"YOUR CART\"`]")
+    private ExtendedWebElement screenTitle;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Description\"`]/XCUIElementTypeStaticText[`label == \"%s\"`]")
+    private ExtendedWebElement productTitleS;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"CHECKOUT\" AND name == \"CHECKOUT\"`]")
+    private ExtendedWebElement checkoutButton;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[$type == \"XCUIElementTypeStaticText\" AND label == \"%s\"$][-2]/**/XCUIElementTypeOther[`name == \"test-REMOVE\"`]")
+    private ExtendedWebElement removeButton;
 
     public CartScreen(WebDriver driver) {
         super(driver);
     }
 
     @Override
+    public boolean isOpened() {
+        return screenTitle.isElementPresent();
+    }
+
+    @Override
     public boolean isProductPresent(String productTitle) {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
+        return swipe(productTitleS.format(productTitle), 5);
     }
 
     @Override
     public CheckoutInformationScreenBase clickCheckoutButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
+        swipe(checkoutButton, 1);
+        checkoutButton.click();
+        return initPage(CheckoutInformationScreenBase.class);
     }
 
     @Override
-    public void clickRemoveButton() {
-        throw new NotSupportedOperationException(METHOD_IS_NOT_IMPLEMENTED_FOR_IOS);
+    public void clickRemoveButton(String productTitle) {
+        removeButton = removeButton.format(productTitle);
+        swipe(removeButton, 5);
+        removeButton.click();
     }
 
 }
