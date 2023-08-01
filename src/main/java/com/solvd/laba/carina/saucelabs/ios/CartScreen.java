@@ -20,7 +20,7 @@ public class CartScreen extends CartScreenBase {
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"CHECKOUT\" AND name == \"CHECKOUT\"`]")
     private ExtendedWebElement checkoutButton;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"%s\"`]/XCUIElementTypeOther[`name == \"test-Price\"`]/XCUIElementTypeOther[`name == \"REMOVE\"`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[$type == \"XCUIElementTypeStaticText\" AND label == \"%s\"$][-2]/**/XCUIElementTypeOther[`name == \"test-REMOVE\"`]")
     private ExtendedWebElement removeButton;
 
     public CartScreen(WebDriver driver) {
@@ -45,8 +45,8 @@ public class CartScreen extends CartScreenBase {
     }
 
     @Override
-    public void clickRemoveButton(String productDetails) {
-        removeButton = removeButton.format(productDetails);
+    public void clickRemoveButton(String productTitle) {
+        removeButton = removeButton.format(productTitle);
         swipe(removeButton, 5);
         removeButton.click();
     }
